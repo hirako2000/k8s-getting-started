@@ -2,7 +2,7 @@
   "title": "Create a Cluster",
   "description": "Steps to create a Kubernetes cluster",
   "difficulty": "Beginner",
-  "time": "60 mins",
+  "time": "15 mins",
   "details": {
     "steps": [
       {
