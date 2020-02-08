@@ -33,15 +33,13 @@
       "text": "finish.md"
     },
     "assets": {
-      "client": [
-        {
-          "file": "thingsboard-pod.yaml",
-          "target": "~/"
-        }
-      ],
       "host01": [
         {
-          "file": "thingsboard-pod.yaml",
+          "file": "thingsboard-naked-pod.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "thingsboard-deployment.yaml",
           "target": "~/"
         }
       ]
