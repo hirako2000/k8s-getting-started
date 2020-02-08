@@ -38,6 +38,12 @@
           "file": "thingsboard-pod.yaml",
           "target": "~/"
         }
+      ],
+      "host01": [
+        {
+          "file": "thingsboard-pod.yaml",
+          "target": "~/"
+        }
       ]
     }
   },
