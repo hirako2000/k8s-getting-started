@@ -31,6 +31,14 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "client": [
+        {
+          "file": "thingsboard-pod.yml",
+          "target": "~/"
+        }
+      ]
     }
   },
   "environment": {
