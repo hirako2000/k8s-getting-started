@@ -35,7 +35,7 @@
     "assets": {
       "client": [
         {
-          "file": "thingsboard-pod.yml",
+          "file": "thingsboard-pod.yaml",
           "target": "~/"
         }
       ]
