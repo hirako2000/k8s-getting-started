@@ -7,7 +7,7 @@ metadata:
     tier: application
 spec:
   containers:
-    - name: thingsboard/tb
+    - name: thingsboard-tb
       image: thingsboard/tb
       imagePullPolicy: IfNotPresent
   nodeSelector:

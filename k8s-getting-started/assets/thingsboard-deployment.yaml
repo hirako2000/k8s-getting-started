@@ -1,36 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-server
+  name: thingsboard-Deployment
 spec:
   selector:
     matchLabels:
-      app: thingsboard-app
+      app: thingsboard
   replicas: 3
   template:
     metadata:
       labels:
-        app: thingsboard-app
+        app: thingsboard
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - thingsboard-app
-              topologyKey: 'kubernetes.io/hostname'
-        podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - store
-              topologyKey: 'kubernetes.io/hostname'
       containers:
-        - name: thingsboardtb
+        - name: thingsboard-tb
           image: thingsboard/tb
+  nodeSelector:
+    disktype: ssd
