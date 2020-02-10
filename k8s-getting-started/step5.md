@@ -1,11 +1,15 @@
-### Label the minikube's node
+### Add Label to the minikube's node
 
 `kubectl label nodes minikube disktype=ssd`{{execute}}
 
-### Creates a naked pod using specification file
+### Create a naked pod using specification file
 
 `kubectl apply -f ./thingsboard-naked-pod.yaml`{{execute}}
 
-### Creates a deployment using specification file
+### Delete Naked pod
+
+`kubectl delete pod --all` {{execute}}
+
+### Create a deployment using specification file
 
 `kubectl apply -f ./thingsboard-deployment.yaml`{{execute}}

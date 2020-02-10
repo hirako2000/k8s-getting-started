@@ -10,5 +10,3 @@ spec:
     - name: thingsboard-tb
       image: thingsboard/tb
       imagePullPolicy: IfNotPresent
-  nodeSelector:
-    disktype: ssd
