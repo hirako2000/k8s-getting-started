@@ -2,9 +2,21 @@
 
 `kubectl get nodes`{{execute}}
 
-### Add Label to the minikube's node
+### List the currently running nodes with Labels
+
+`kubectl get nodes --show-labels`{{execute}}
+
+### Add disktype Label to the minikube's node
 
 `kubectl label nodes minikube disktype=ssd`{{execute}}
+
+### Add environment Label to the minikube's node
+
+`kubectl label nodes minikube environment=test`{{execute}}
+
+### See the new labels added to the nodes
+
+`kubectl get nodes --show-labels`{{execute}}
 
 ### Create dev-1 namespace via spec file
 
