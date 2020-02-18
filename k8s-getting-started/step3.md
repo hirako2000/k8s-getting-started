@@ -4,7 +4,7 @@
 
 `kubectl scale deployment/thingsboard --replicas=3`{{execute}}
 
-### Set events
+### See events
 
 `kubectl get events`{{execute}}
 
