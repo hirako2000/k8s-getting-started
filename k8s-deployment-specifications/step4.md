@@ -4,7 +4,7 @@
 
 ### See deployment
 
-`kubectl get deployment --namespace dev-1`{execute}
+`kubectl get deployment --namespace dev-1`{{execute}}
 
 ### See pods
 

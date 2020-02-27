@@ -1,15 +1,12 @@
-### Add Label to the minikube's node
+### Create a NodePort Service using specification file
 
-`kubectl label nodes minikube disktype=ssd`{{execute}}
+`kubectl apply -f ./thingsboard-service.yaml`{{execute}}
 
-### Create a naked pod using specification file
+### See the service
 
-`kubectl apply -f ./thingsboard-naked-pod.yaml`{{execute}}
+`kubectl get services`{{execute}}
 
-### Delete Naked pod
+### Access the Webapp from external network
 
-`kubectl delete pod --all` {{execute}}
-
-### Create a deployment using specification file
-
-`kubectl apply -f ./thingsboard-deployment.yaml`{{execute}}
+With a web browser, access localhost on the port defined in the service (80)
+In Katacode, `Select Port to view on Host 1` using the (+) menu item next to the Terminal tab
