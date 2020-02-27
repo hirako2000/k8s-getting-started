@@ -49,6 +49,10 @@
         {
           "file": "dev-2-namespace.yaml",
           "target": "~/"
+        },
+        {
+          "file": "thingsboard-service.yaml",
+          "target": "~/"
         }
       ]
     }

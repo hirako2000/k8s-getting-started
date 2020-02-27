@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: thingsboard-Deployment
+  name: thingsboard-deployment
   namespace: dev-1
 spec:
   selector:
@@ -16,5 +16,3 @@ spec:
       containers:
         - name: thingsboard-tb
           image: thingsboard/tb
-  nodeSelector:
-    disktype: ssd
