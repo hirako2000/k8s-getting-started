@@ -36,4 +36,4 @@
 
 ### Delete all the pod to clear out our node
 
-`kubectl delete pod --all`{{execute}}
+`kubectl delete pod --all --namespace dev-1`{{execute}}

@@ -6,6 +6,10 @@
 
 `kubectl get services`{{execute}}
 
+### Let's see the logs to confirm the app is ready to handle requests
+
+`kubectl logs -l app=thingsboard --namespace dev-1`{{execute}}
+
 ### Access the Webapp from external network
 
 With a web browser, access localhost on the port defined in the service (80)
