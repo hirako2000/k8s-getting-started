@@ -1,4 +1,4 @@
-### Deploy the thingsboard app
+### Deploy the thingsboard webapp
 
 First, make sure that postgres deployment is READY
 

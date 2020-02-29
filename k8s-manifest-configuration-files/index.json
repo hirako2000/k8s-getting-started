@@ -1,6 +1,6 @@
 {
-  "title": "Create a Cluster via specification files",
-  "description": "Steps to create a Kubernetes cluster using YAML specification files",
+  "title": "Create a Cluster via manifest files",
+  "description": "Steps to create a Kubernetes cluster using YAML manifest files",
   "difficulty": "Intermediate",
   "time": "15 mins",
   "details": {

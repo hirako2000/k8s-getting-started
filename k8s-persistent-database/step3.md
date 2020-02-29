@@ -16,3 +16,5 @@ In the thingsboard interface, go to Widgets Library, and delete the Chart widget
 ### Stop the cluster
 
 `minikube stop`{{execute}}
+
+Wait until all the resources are actually deleted and the cluster stopped, this may take a minute.
