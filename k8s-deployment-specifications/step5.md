@@ -4,7 +4,7 @@
 
 ### See the service
 
-`kubectl get services`{{execute}}
+`kubectl get services --namespace dev-1`{{execute}}
 
 ### Let's see the logs to confirm the app is ready to handle requests
 

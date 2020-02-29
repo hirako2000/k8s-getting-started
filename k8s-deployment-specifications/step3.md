@@ -32,7 +32,7 @@
 
 ### See the event for the pod creation
 
-`kubectl get events`{{execute}}
+`kubectl get events --namespace dev-1`{{execute}}
 
 ### Delete all the pod to clear out our node
 
