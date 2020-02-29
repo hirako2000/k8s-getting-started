@@ -9,6 +9,7 @@ This scenario takes you through the process of deploying a web application on k8
 - Creating a simple deployment
 - K8s events
 - Basic k8s service
+- Pods Console Logs access
 - Read/Write on a pod filesystem
 - Pod Interactive shell
 
