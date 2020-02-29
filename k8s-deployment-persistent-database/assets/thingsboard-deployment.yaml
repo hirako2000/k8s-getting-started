@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thingsboard-deployment
+spec:
+  selector:
+    matchLabels:
+      app: thingsboard
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: thingsboard
+    spec:
+      containers:
+        - name: thingsboard-tb
+          image: thingsboard/tb
