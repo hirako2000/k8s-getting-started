@@ -13,5 +13,5 @@ spec:
         app: thingsboard
     spec:
       containers:
-        - name: thingsboard-tb
-          image: thingsboard/tb
+        - name: thingsboard-postgres
+          image: thingsboard/postgres

@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: postgres
 spec:
+  selector:
+    matchLabels:
+      app: postgres
   replicas: 1
   template:
     metadata:
@@ -17,7 +20,7 @@ spec:
             - containerPort: 5432
           envFrom:
             - configMapRef:
-              name: postgres-config
+                name: postgres-config
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb
