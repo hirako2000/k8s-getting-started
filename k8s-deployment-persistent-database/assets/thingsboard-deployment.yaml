@@ -15,3 +15,6 @@ spec:
       containers:
         - name: thingsboard-postgres
           image: thingsboard/tb-postgres
+          envFrom:
+            - configMapRef:
+                name: postgres-config

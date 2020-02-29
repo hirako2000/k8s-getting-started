@@ -5,6 +5,9 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_DB: postgresdb
-  POSTGRES_USER: postgresadmin
-  POSTGRES_PASSWORD: admin123
+  POSTGRES_DB: thingsboarddb
+  POSTGRES_USER: thingsboard
+  POSTGRES_PASSWORD: thingsboard
+  SPRING_DATASOURCE_URL: jdbc:postgresql://tb-database:5432/thingsboarddb
+  SPRING_DATASOURCE_USERNAME: thingsboard
+  SPRING_DATASOURCE_PASSWORD: thingsboard
