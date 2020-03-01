@@ -7,19 +7,9 @@
   "icon": "fa-kubernetes",
   "courses": [
     {
-      "course_id": "k8s-getting-started",
-      "title": "Create a simple cluster",
-      "description": "Create your first cluster with minikube and deploy a web application with kubectl"
-    },
-    {
-      "course_id": "k8s-manifest-configuration-files",
-      "title": "Create a simple cluster using manifest configuration files",
-      "description": "Create a cluster and deploy a web application with kubectl"
-    },
-    {
-      "course_id": "k8s-persistent-database",
-      "title": "Create a persistent volume and database",
-      "description": "Create a cluster with persistent volume and database backed web application"
+      "course_id": "kubernetes-a-to-z",
+      "title": "Kubernetes A to Z",
+      "description": "A serie of scenarios that will teach you how to use Kubernetes"
     }
   ]
 }
