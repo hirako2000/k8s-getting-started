@@ -1,6 +1,5 @@
 {
   "title": "Create a Cluster",
-  "pathwayTitle": "Kubernetes A to Z",
   "course_id": "kubernetes-a-to-z",
   "description": "Steps to create a Kubernetes cluster",
   "difficulty": "Beginner",

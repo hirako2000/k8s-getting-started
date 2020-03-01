@@ -1,6 +1,5 @@
 {
   "title": "Create a Cluster via manifest files",
-  "pathwayTitle": "Kubernetes A to Z",
   "course_id": "kubernetes-a-to-z",
   "description": "Steps to create a Kubernetes cluster using YAML manifest files",
   "difficulty": "Intermediate",
