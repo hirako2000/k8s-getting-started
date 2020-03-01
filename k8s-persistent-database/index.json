@@ -1,6 +1,7 @@
 {
   "title": "Create a persistent volume and database deployment",
   "pathwayTitle": "Kubernetes A to Z",
+  "course_id": "kubernetes-a-to-z",
   "description": "Steps to create a Kubernetes cluster with persistent volume and database, using YAML specification files",
   "difficulty": "Intermediate",
   "time": "15 mins",
