@@ -33,8 +33,8 @@ List the labels set on the node again, you shall see the newly added labels:
 Here is the dev-1 namespace manifest content:
 
 ```yaml
-kind: Namespace
 apiVersion: v1
+kind: Namespace
 metadata:
   name: dev-1
 ```

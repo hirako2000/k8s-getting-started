@@ -9,8 +9,8 @@ Run this command to create a `dev-1` namespace:
 Here is the dev-2 namespace manifest content:
 
 ```yaml
-kind: Namespace
 apiVersion: v1
+kind: Namespace
 metadata:
   name: dev-2
 ```
