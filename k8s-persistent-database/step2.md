@@ -2,11 +2,11 @@
 
 First, make sure that postgres deployment is READY
 
-`kubectl get deployments`{{execute}}
+`kubectl get deployments --namespace dev-1`{{execute}}
 
 Also ensure that the CluserIP service is now created. Why? The thingsboard app will connect to the database at startup, if the database isn't running, the deployment will fail.
 
-`kubectl get services`{{execute}}
+`kubectl get services --namespace dev-1`{{execute}}
 
 Now you may deploy the thingsboard application
 

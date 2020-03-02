@@ -6,6 +6,17 @@ Run this command to create a `dev-1` namespace:
 
 ### Create a namespace via spec file
 
+Here is the dev-2 namespace manifest content:
+
+```yaml
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: dev-2
+```
+
+The `dev-2-namespace.yaml` file was conveniently placed in the current path.
+
 Run this command to create a `dev-2` namespace, via manifest file:
 
 `kubectl apply -f ./dev-2-namespace.yaml`{{execute}}

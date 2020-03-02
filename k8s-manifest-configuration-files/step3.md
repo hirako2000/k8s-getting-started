@@ -30,7 +30,17 @@ List the labels set on the node again, you shall see the newly added labels:
 
 ### Create dev-1 namespace via spec file
 
-Let's create again the `dev-1` namespace we had deleted earlier:
+Here is the dev-1 namespace manifest content:
+
+```yaml
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: dev-1
+```
+
+Let's create again the `dev-1` namespace we had deleted earlier. The `dev-1-namespace.yaml` file is conveniently already placed into your current path, so you may just run this command:
+
 `kubectl apply -f ./dev-1-namespace.yaml`{{execute}}
 
 We will create all the resources in this Scenario in the `dev-1` namespace.

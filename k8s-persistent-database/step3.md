@@ -7,7 +7,7 @@ In the thingsboard interface, go to Widgets Library, and delete the Chart widget
 
 ### Delete all deployments and services
 
-`kubectl delete all --all`{{execute}}
+`kubectl delete all --all --namespace dev-1`{{execute}}
 
 ### Delete the persistent volume
 
