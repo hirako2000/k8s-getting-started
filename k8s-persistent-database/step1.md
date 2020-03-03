@@ -38,7 +38,7 @@ Then create the persistent volume claim:
 
 ### See the created persited volume claim
 
-`kubectl get peristentvolumeclaims --namespace dev-1`{{execute}}
+`kubectl get persistentvolumes --namespace dev-1`{{execute}}
 
 ### Deploy postgres
 
