@@ -4,9 +4,15 @@ The first step is to start the cluster:
 
 `minikube start`{{execute}}
 
+### Create namespace
+
+Now we create our usual dev-1 namespace:
+
+`kubectl apply -f ./dev-1-namespace.yaml`{{execute}}
+
 ### Create postgres config map
 
-Creates the configmap for postgres:
+Create the configmap for postgres:
 
 `kubectl create -f ./postgres-configmap.yaml`{{execute}}
 
@@ -22,7 +28,7 @@ Then create the persistent volume for the postgres data
 
 ### See the created persited volume
 
-`kubectl get peristentvolumes --namespace dev-1`{{execute}}
+`kubectl get persistentvolumes --namespace dev-1`{{execute}}
 
 ### Create postgres persistent volume claim
 

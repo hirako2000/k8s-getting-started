@@ -52,6 +52,10 @@
           "target": "~/"
         },
         {
+          "file": "postgres-persistent-volume-claim.yaml",
+          "target": "~/"
+        },
+        {
           "file": "postgres-service.yaml",
           "target": "~/"
         },

@@ -5,7 +5,9 @@ This scenario takes you through the process of deploying a persistent volume and
 ## Concepts
 
 - Creating a persistent volume
+- Creating a persistent volume claim
 - Creating a database deployment
+- Deleting cluster resources
 
 ## Environment
 
