@@ -8,6 +8,10 @@ We will now re-create the entire cluster
 
 `kubectl create -f dev-1-namespace.yaml`{{execute}}
 
+Create the configmap for postgres:
+
+`kubectl create -f ./postgres-configmap.yaml`{{execute}}
+
 ### Create postgres persistent volume
 
 `kubectl create -f postgres-persistent-volume.yaml`{{execute}}
@@ -34,10 +38,6 @@ We will now re-create the entire cluster
 
 ## Access the Webapp from external network
 
-### Get the service port
-
-`kubectl get services --namespace dev-1`{{execute}}
-
 ### Open the web interface
 
 Click on `Select Port to view on Host 1` using the (+) menu item next to the Terminal tab
@@ -50,11 +50,12 @@ You may see the generated port by running:
 Take note of the generated port shown as 80:**port**/TCP
 
 ```bash
-NAME                  TYPE       CLUSTER-IP      PORT(S)
-thingsboard-service   NodePort   10.96.170.117   80:32464/TCP
+NAME                  TYPE       PORT(S)
+thingsboard-service   NodePort   80:32464/TCP
 ```
 
 **To login:**
-System Administrator: sysadmin@thingsboard.org / sysadmin
-Tenant Administrator: tenant@thingsboard.org / tenant
-Customer User: customer@thingsboard.org / customer
+
+- System Administrator: sysadmin@thingsboard.org / sysadmin
+- Tenant Administrator: tenant@thingsboard.org / tenant
+- Customer User: customer@thingsboard.org / customer
