@@ -39,7 +39,16 @@ metadata:
   name: dev-1
 ```
 
-Let's create again the `dev-1` namespace we had deleted earlier. The `dev-1-namespace.yaml` file is conveniently already placed into your current path, so you may just run this command:
+Let's create again the `dev-1` namespace we had deleted earlier. The `dev-1-namespace.yaml` file is conveniently already placed into your current path, here is its content:
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-1
+```
+
+Run this command to create that namespace:
 
 `kubectl apply -f ./dev-1-namespace.yaml`{{execute}}
 

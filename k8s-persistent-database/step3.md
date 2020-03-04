@@ -3,15 +3,13 @@ To do so, we will use the web application to modify the database, and verify tha
 
 ### Delete a widget through the web app interface
 
-In the thingsboard interface, go to Widgets Library, and delete the Chart widget.
+In the thingsboard interface, go to Widgets Library, and delete the **Chart** widget.
 
-### Delete all deployments and services
+### Delete all the namespace
 
-`kubectl delete all --all --namespace dev-1`{{execute}}
+`kubectl delete -f ./dev-1-namespace.yaml`{{execute}}
 
-### Delete the persistent volume
-
-`kubectl delete -f ./postgres-persistent-volume.yaml`{{execute}}
+This will delete all resources associated with this namespace. All sevices, deployments, pods, and persistent volumes from the cluster
 
 ### Stop the cluster
 

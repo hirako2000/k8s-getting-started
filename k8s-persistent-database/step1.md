@@ -12,13 +12,36 @@ Now we create our usual dev-1 namespace:
 
 ### Create postgres config map
 
+Here is the configmap manifest content:
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: dev-1
+  labels:
+    app: postgres
+data:
+  POSTGRES_DB: thingsboarddb
+  POSTGRES_USER: thingsboard
+  POSTGRES_PASSWORD: thingsboard
+  SPRING_DATASOURCE_URL: jdbc:postgresql://tb-database:5432/thingsboarddb
+  SPRING_DATASOURCE_USERNAME: thingsboard
+  SPRING_DATASOURCE_PASSWORD: thingsboard
+```
+
 Create the configmap for postgres:
 
 `kubectl create -f ./postgres-configmap.yaml`{{execute}}
 
-### See the configmap values:
+### See the configmaps:
 
 `kubectl get configmap --namespace dev-1`{{execute}}
+
+### See the configmaps manifest:
+
+`kubectl get configmap --namespace dev-1 -o yaml`{{execute}}
 
 ### Create postgres persistent volume
 
