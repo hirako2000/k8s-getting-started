@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thingsboard-deployment
+  namespace: dev-1
+spec:
+  selector:
+    matchLabels:
+      app: thingsboard
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: thingsboard
+    spec:
+      containers:
+        - name: thingsboard-postgres
+          image: thingsboard/tb-postgres
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: thingsboard-service
+  namespace: dev-1
+spec:
+  selector:
+    app: thingsboard
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9090
+  type: NodePort

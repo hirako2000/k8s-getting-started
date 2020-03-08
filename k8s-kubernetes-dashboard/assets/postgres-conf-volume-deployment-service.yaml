@@ -1,0 +1,93 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: dev-1
+  labels:
+    app: postgres
+data:
+  POSTGRES_DB: thingsboarddb
+  POSTGRES_USER: thingsboard
+  POSTGRES_PASSWORD: thingsboard
+  SPRING_DATASOURCE_URL: jdbc:postgresql://tb-database:5432/thingsboarddb
+  SPRING_DATASOURCE_USERNAME: thingsboard
+  SPRING_DATASOURCE_PASSWORD: thingsboard
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-pv-volume
+  namespace: dev-1
+  labels:
+    type: local
+    app: postgres
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: '/mnt/data'
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pv-claim
+  namespace: dev-1
+  labels:
+    app: postgres
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: dev-1
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:10.4
+          imagePullPolicy: 'IfNotPresent'
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgredb
+      volumes:
+        - name: postgredb
+          persistentVolumeClaim:
+            claimName: postgres-pv-claim
+---
+apiVersion: v1
+  kind: Service
+  metadata:
+    name: tb-database
+    namespace: dev-1
+    labels:
+      app: postgres
+  spec:
+    type: ClusterIP
+    ports:
+      - port: 5432
+    selector:
+      app: postgres
+  

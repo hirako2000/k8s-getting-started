@@ -1,7 +1,7 @@
 {
-  "title": "Create a persistent volume and database deployment",
+  "title": "Deploy the Kubernetes (UI) Dashboard and monitor resources",
   "course_id": "kubernetes-a-to-z",
-  "description": "Steps to create a Kubernetes cluster with persistent volume and database, using YAML specification files",
+  "description": "Steps to create a Kubernetes cluster with Dashboard and application deployments, using YAML specification files",
   "difficulty": "Intermediate",
   "time": "30 mins",
   "details": {
@@ -40,31 +40,27 @@
           "target": "~/"
         },
         {
-          "file": "postgres-configmap.yaml",
+          "file": "postgres-conf-volume-deployment-service.yaml",
           "target": "~/"
         },
         {
-          "file": "postgres-deployment.yaml",
+          "file": "thingsboard-deployment-service.yaml",
           "target": "~/"
         },
         {
-          "file": "postgres-persistent-volume.yaml",
+          "file": "kubernetes-dashboard-service-account.yaml",
           "target": "~/"
         },
         {
-          "file": "postgres-persistent-volume-claim.yaml",
+          "file": "kubernetes-dashboard-cluster-binding.yaml",
           "target": "~/"
         },
         {
-          "file": "postgres-service.yaml",
+          "file": "kubernetes-dashboard-deployment.yaml",
           "target": "~/"
         },
         {
-          "file": "thingsboard-deployment.yaml",
-          "target": "~/"
-        },
-        {
-          "file": "thingsboard-service.yaml",
+          "file": "kubernetes-service.yaml",
           "target": "~/"
         }
       ]
