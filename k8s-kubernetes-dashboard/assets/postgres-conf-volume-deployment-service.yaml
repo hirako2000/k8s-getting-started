@@ -12,7 +12,7 @@ data:
   SPRING_DATASOURCE_URL: jdbc:postgresql://tb-database:5432/thingsboarddb
   SPRING_DATASOURCE_USERNAME: thingsboard
   SPRING_DATASOURCE_PASSWORD: thingsboard
-———
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -29,7 +29,7 @@ spec:
     - ReadWriteMany
   hostPath:
     path: '/mnt/data'
-———
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -44,7 +44,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-———
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -76,18 +76,17 @@ spec:
         - name: postgredb
           persistentVolumeClaim:
             claimName: postgres-pv-claim
-———
+---
 apiVersion: v1
-  kind: Service
-  metadata:
-    name: tb-database
-    namespace: dev-1
-    labels:
-      app: postgres
-  spec:
-    type: ClusterIP
-    ports:
-      - port: 5432
-    selector:
-      app: postgres
-  
+kind: Service
+metadata:
+  name: tb-database
+  namespace: dev-1
+  labels:
+    app: postgres
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+  selector:
+    app: postgres
