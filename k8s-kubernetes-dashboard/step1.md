@@ -19,7 +19,7 @@ Create all postgres related resources, this yaml contains the manifest for
 - Application deployment
 - ClusterIP Service
 
-`kubectl create -f ./postgres-conf-volume-deploment-service.yaml`{{execute}}
+`kubectl create -f ./postgres-conf-volume-deployment-service.yaml`{{execute}}
 
 Wait for the deployment to be ready.
 
