@@ -60,7 +60,7 @@
           "target": "~/"
         },
         {
-          "file": "kubernetes-service.yaml",
+          "file": "kubernetes-dashboard-service.yaml",
           "target": "~/"
         }
       ]
