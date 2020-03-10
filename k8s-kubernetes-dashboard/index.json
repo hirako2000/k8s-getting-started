@@ -28,13 +28,18 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "init.sh"
     },
     "finish": {
       "text": "finish.md"
     },
     "assets": {
       "host01": [
+        {
+          "file": "init.sh",
+          "target": "~/"
+        },
         {
           "file": "dev-1-namespace.yaml",
           "target": "~/"
