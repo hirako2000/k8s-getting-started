@@ -1,1 +1,1 @@
-minikube start && minikube addons disable dashboard
+minikube start
