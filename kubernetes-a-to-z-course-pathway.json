@@ -1,0 +1,11 @@
+{
+  "title": "Kubernetes A to Z",
+  "description": "A series of scenarios that will teach you how to use Kubernetes",
+  "courses": [
+    {
+      "course_id": "k8s-getting-started",
+      "title": "Create a Cluster",
+      "description": "Steps to create a Kubernetes cluster"
+    }
+  ]
+}
