@@ -1,9 +1,3 @@
-### Start Cluster
-
-The first step is to start the cluster:
-
-`minikube start`{{execute}}
-
 ### Create namespace
 
 Now we create our usual dev-1 namespace:
