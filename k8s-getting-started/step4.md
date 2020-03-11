@@ -26,7 +26,7 @@ We may also get the interfactive shell of a specific pod.
 
 Run this command to get an interactive shell:
 
-`kubectl exec thingsboard-xxxxxx -it bash`{{copy}}
+`kubectl exec thingsboard-xxxxxx -it bash`
 
 ## Exit bash
 
