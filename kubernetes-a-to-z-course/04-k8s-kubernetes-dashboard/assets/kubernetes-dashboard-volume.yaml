@@ -1,33 +1,31 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: dashboard-pv-volume
+  namespace: dev-1
+  labels:
+    type: local
+    app: kubernetes-dashboard
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: '/mnt/dashboard'
 ---
-  apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-    name: dashboard-pv-volume
-    namespace: dev-1
-    labels:
-      type: local
-      app: kubernetes-dashboard
-  spec:
-    storageClassName: manual
-    capacity:
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dashboard-pv-claim
+  namespace: dev-1
+  labels:
+    app: kubernetes-dashboard
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
       storage: 1Gi
-    accessModes:
-      - ReadWriteMany
-    hostPath:
-      path: '/mnt/dashboard'
-  ---
-  apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    name: dashboard-pv-claim
-    namespace: dev-1
-    labels:
-      app: kubernetes-dashboard
-  spec:
-    storageClassName: manual
-    accessModes:
-      - ReadWriteMany
-    resources:
-      requests:
-        storage: 1Gi
-  ---
