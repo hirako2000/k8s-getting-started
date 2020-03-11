@@ -37,10 +37,6 @@
     "assets": {
       "host01": [
         {
-          "file": "../init.sh",
-          "target": "~/"
-        },
-        {
           "file": "dev-1-namespace.yaml",
           "target": "~/"
         },

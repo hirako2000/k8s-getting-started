@@ -3,9 +3,24 @@
   "description": "A series of scenarios that will teach you how to use Kubernetes",
   "courses": [
     {
-      "course_id": "k8s-getting-started",
+      "course_id": "01-k8s-getting-started",
       "title": "Create a Cluster",
       "description": "Steps to create a Kubernetes cluster"
+    },
+    {
+      "course_id": "02-k8s-manifest-configuration-files",
+      "title": "Create a Cluster via manifest files",
+      "description": "Steps to create a Kubernetes cluster using YAML manifest files"
+    },
+    {
+      "course_id": "03-k8s-persistent-database",
+      "title": "Create a persistent volume and database deployment",
+      "description": "Steps to create a Kubernetes cluster with persistent volume and database, using YAML specification files"
+    },
+    {
+      "course_id": "04-k8s-kubernetes-dashboard",
+      "title": "Deploy the Kubernetes (UI) Dashboard and monitor resources",
+      "description": "Steps to create a Kubernetes cluster with Dashboard and application deployments, using YAML specification files"
     }
   ]
 }
