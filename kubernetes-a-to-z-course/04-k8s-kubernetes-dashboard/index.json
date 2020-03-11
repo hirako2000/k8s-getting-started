@@ -49,6 +49,10 @@
           "target": "~/"
         },
         {
+          "file": "kubernetes-dashboard-volume.yaml",
+          "target": "~/"
+        },
+        {
           "file": "kubernetes-dashboard-service-account.yaml",
           "target": "~/"
         },
