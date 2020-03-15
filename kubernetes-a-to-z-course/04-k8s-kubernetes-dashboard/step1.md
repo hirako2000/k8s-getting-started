@@ -1,8 +1,19 @@
+### Disabling the Dashboard addons
+
+Minikube starts with the dashboard enabled by default.
+But we will deploy it ourselves. Run this command to disable the addon:
+
+`minikube addons disable dashboard`{{execute}}
+
 ### Create namespace
 
 Now we create our usual dev-1 namespace:
 
 `kubectl apply -f ./dev-1-namespace.yaml`{{execute}}
+
+### Disable dashboard addon
+
+`minikube addons disable dashboard`{{execute}}
 
 ### Create the postgres resources
 
