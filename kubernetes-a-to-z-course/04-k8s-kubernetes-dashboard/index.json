@@ -49,6 +49,10 @@
           "target": "~/"
         },
         {
+          "file": "kubernetes-dashboard-namespace.yaml",
+          "target": "~/"
+        },
+        {
           "file": "kubernetes-dashboard-volume.yaml",
           "target": "~/"
         },
@@ -57,7 +61,15 @@
           "target": "~/"
         },
         {
-          "file": "kubernetes-dashboard-cluster-binding.yaml",
+          "file": "kubernetes-dashboard-role-binding.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-metrics-scraper-deployment.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-metrics-scraper-service.yaml",
           "target": "~/"
         },
         {
