@@ -21,3 +21,14 @@ Run this command to deploy the UI Dashboard
 Run this command to create the NodePort service to route traffic:
 
 `kubectl create -f ./kubernetes-dashboard-service.yaml`{{execute}}
+
+### List secrets
+
+Run this command to list all secrets for a given namespace:
+
+`kubectl get secrets --namespace kube-system`{{execute}}
+
+### Get the token
+
+Now you may see the token for a particular secret, replace -xxxx with the secret id
+`kubectl describe secret kubernetes-dashboard-token-xxxx --namespace kube-system`{{copy}}
