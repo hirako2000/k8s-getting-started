@@ -12,7 +12,7 @@ Run this command to create the ServiceAccount, roles and binding resource for th
 
 Deploy the metrics scraper:
 
-`kubectl create -f ./kubernetes-dashboard-namespace.yaml`{{execute}}
+`kubectl create -f ./kubernetes-dashboard-metrics-scraper-deployment.yaml`{{execute}}
 
 ### Metrics scrapper service
 
