@@ -11,10 +11,6 @@ Now we create our usual dev-1 namespace:
 
 `kubectl apply -f ./dev-1-namespace.yaml`{{execute}}
 
-### Disable dashboard addon
-
-`minikube addons disable dashboard`{{execute}}
-
 ### Create the postgres resources
 
 Create all postgres related resources, this yaml contains the manifest for
