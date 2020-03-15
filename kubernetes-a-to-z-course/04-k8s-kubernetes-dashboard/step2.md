@@ -1,14 +1,24 @@
-### Create the ServiceAccount
+### Create namespace
 
-Run this command to create the ServiceAccount resource for the dashboard
+`kubectl create -f ./kubernetes-dashboard-namespace.yaml`{{execute}}
 
-`kubectl create -f ./kubernetes-dashboard-service-account.yaml`{{execute}}
+### Create the roles and service account
 
-### Create the cluster binding
+Run this command to create the ServiceAccount, roles and binding resource for the dashboard
 
-Run this command to bind the role to this cluster
+`kubectl create -f ./kubernetes-dashboard-role-binding.yaml`{{execute}}
 
-`kubectl create -f ./kubernetes-dashboard-cluster-binding.yaml`{{execute}}
+### Metrics scrapper deployment
+
+Deploy the metrics scraper:
+
+`kubectl create -f ./kubernetes-dashboard-namespace.yaml`{{execute}}
+
+### Metrics scrapper service
+
+Create the metrics scraper service:
+
+`kubectl create -f ./kubernetes-dashboard-metrics-scraper-service.yaml`{{execute}}
 
 ### Deploy the dashboard
 
@@ -26,9 +36,9 @@ Run this command to create the NodePort service to route traffic:
 
 Run this command to list all secrets for a given namespace:
 
-`kubectl get secrets --namespace kube-system`{{execute}}
+`kubectl get secrets --namespace kubernetes-dashboard`{{execute}}
 
 ### Get the token
 
 Now you may see the token for a particular secret, replace -xxxx with the secret id
-`kubectl describe secret kubernetes-dashboard-token-xxxx --namespace kube-system`{{copy}}
+`kubectl describe secret kubernetes-dashboard-token-xxxx --namespace kubernetes-dashboard`{{copy}}
