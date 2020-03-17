@@ -1,44 +1,28 @@
 ### Create namespace
 
-`kubectl create -f ./kubernetes-dashboard-namespace.yaml`{{execute}}
+Now we create our usual dev-1 namespace:
 
-### Create the roles and service account
+`kubectl apply -f ./dev-1-namespace.yaml`{{execute}}
 
-Run this command to create the ServiceAccount, roles and binding resource for the dashboard
+### Create the postgres resources
 
-`kubectl create -f ./kubernetes-dashboard-role-binding.yaml`{{execute}}
+Create all postgres related resources, this yaml contains the manifest for
 
-### Metrics scrapper deployment
+- Configmap
+- Persistent Volume and claim
+- Application deployment
+- ClusterIP Service
 
-Deploy the metrics scraper:
+`kubectl create -f ./postgres-conf-volume-deployment-service.yaml`{{execute}}
 
-`kubectl create -f ./kubernetes-dashboard-metrics-scraper-deployment.yaml`{{execute}}
+Wait for the deployment to be ready.
 
-### Metrics scrapper service
+### Deploy thingsboard
 
-Create the metrics scraper service:
+First, make sure that postgres deployment is READY
 
-`kubectl create -f ./kubernetes-dashboard-metrics-scraper-service.yaml`{{execute}}
+`kubectl get deployments --namespace dev-1`{{execute}}
 
-### Deploy the dashboard
+Now you may deploy the thingsboard application and service
 
-Run this command to deploy the UI Dashboard
-
-`kubectl create -f ./kubernetes-dashboard-deployment.yaml`{{execute}}
-
-### Create the NodePort service
-
-Run this command to create the NodePort service to route traffic:
-
-`kubectl create -f ./kubernetes-dashboard-service.yaml`{{execute}}
-
-### List secrets
-
-Run this command to list all secrets for a given namespace:
-
-`kubectl get secrets --namespace kubernetes-dashboard`{{execute}}
-
-### Get the token
-
-Now you may see the token for a particular secret, replace -xxxx with the secret id
-`kubectl describe secret kubernetes-dashboard-token-xxxx --namespace kubernetes-dashboard`{{copy}}
+`kubectl apply -f ./thingsboard-deployment-service.yaml`{{execute}}

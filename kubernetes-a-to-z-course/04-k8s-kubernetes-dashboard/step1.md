@@ -7,29 +7,50 @@ But we will deploy it ourselves. Run this command to disable the addon:
 
 ### Create namespace
 
-Now we create our usual dev-1 namespace:
+We create a namespace for the kubernetes dashboard:
 
-`kubectl apply -f ./dev-1-namespace.yaml`{{execute}}
+`kubectl create -f ./kubernetes-dashboard-namespace.yaml`{{execute}}
 
-### Create the postgres resources
+### Create the roles and service account
 
-Create all postgres related resources, this yaml contains the manifest for
+Run this command to create the ServiceAccount, roles and binding resource for the dashboard
 
-- Configmap
-- Persistent Volume and claim
-- Application deployment
-- ClusterIP Service
+`kubectl create -f ./kubernetes-dashboard-role-binding.yaml`{{execute}}
 
-`kubectl create -f ./postgres-conf-volume-deployment-service.yaml`{{execute}}
+### Metrics scrapper deployment
 
-Wait for the deployment to be ready.
+Deploy the metrics scraper:
 
-### Deploy thingsboard
+`kubectl create -f ./kubernetes-dashboard-metrics-scraper-deployment.yaml`{{execute}}
 
-First, make sure that postgres deployment is READY
+### Metrics scrapper service
 
-`kubectl get deployments --namespace dev-1`{{execute}}
+Create the metrics scraper service:
 
-Now you may deploy the thingsboard application and service
+`kubectl create -f ./kubernetes-dashboard-metrics-scraper-service.yaml`{{execute}}
 
-`kubectl apply -f ./thingsboard-deployment-service.yaml`{{execute}}
+### Deploy the dashboard
+
+Run this command to deploy the UI Dashboard
+
+`kubectl create -f ./kubernetes-dashboard-deployment.yaml`{{execute}}
+
+### Create the NodePort service
+
+Run this command to create the NodePort service to route traffic:
+
+`kubectl create -f ./kubernetes-dashboard-service.yaml`{{execute}}
+
+The dashboard will take a few minutes to deploy and get ready to serve.
+We will list and get a token in th meantime as we will need to authenticate/login on the dashboard with it.
+
+### List secrets
+
+Run this command to list all secrets for a given namespace:
+
+`kubectl get secrets --namespace kubernetes-dashboard`{{execute}}
+
+### Get the token
+
+Now you may see the token for a particular secret, replace -xxxx with the secret id
+`kubectl describe secret kubernetes-dashboard-token-xxxx --namespace kubernetes-dashboard`{{copy}}

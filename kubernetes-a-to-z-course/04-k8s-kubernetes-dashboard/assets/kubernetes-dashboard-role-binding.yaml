@@ -24,12 +24,12 @@ rules:
         'kubernetes-dashboard-csrf',
       ]
     verbs: ['get', 'update', 'delete']
-    # Allow Dashboard to get and update 'kubernetes-dashboard-settings' config map.
+  # Allow Dashboard to get and update 'kubernetes-dashboard-settings' config map.
   - apiGroups: ['']
     resources: ['configmaps']
     resourceNames: ['kubernetes-dashboard-settings']
     verbs: ['get', 'update']
-    # Allow Dashboard to get metrics.
+  # Allow Dashboard to get metrics.
   - apiGroups: ['']
     resources: ['services']
     resourceNames: ['heapster', 'dashboard-metrics-scraper']
