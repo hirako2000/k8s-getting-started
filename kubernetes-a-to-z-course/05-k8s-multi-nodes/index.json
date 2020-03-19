@@ -61,38 +61,26 @@
           "target": "~/"
         }
       ],
-      "host02": [
-        {
-          "file": "namespaces.yaml",
-          "target": "~/"
-        },
-        {
-          "file": "postgres-conf-volume-deployment-service.yaml",
-          "target": "~/"
-        },
-        {
-          "file": "thingsboard-deployment-service.yaml",
-          "target": "~/"
-        },
-        {
-          "file": "kubernetes-dashboard-all.yaml",
-          "target": "~/"
-        },
-        {
-          "file": "kubernetes-dashboard-volume.yaml",
-          "target": "~/"
-        }
-      ],
-      "host03": [{ "file": "*", "target": "~/", "chmod": "+x" }],
-      "node04": [{ "file": "*", "target": "~/", "chmod": "+x" }],
-      "node05": [{ "file": "*", "target": "~/", "chmod": "+x" }]
+      "node01": [{ "file": "*", "target": "~/", "chmod": "+x" }],
+      "node02": [{ "file": "*", "target": "~/", "chmod": "+x" }],
+      "node03": [{ "file": "*", "target": "~/", "chmod": "+x" }]
     }
   },
   "environment": {
     "uilayout": "terminal-terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n",
+    "dashboards": [
+      {
+        "name": "Kubernetes Dashboard",
+        "href": "https://[[HOST1_SUBDOMAIN]]-32000-[[KATACODA_HOST]].environments.katacoda.com"
+      },
+      {
+        "name": "Thingsboard",
+        "href": "https://[[HOST1_SUBDOMAIN]]-32001-[[KATACODA_HOST]].environments.katacoda.com"
+      }
+    ]
   },
   "backend": {
-    "imageid": "kubernetes-cluster"
+    "imageid": "kubernetes-cluster-4node-running"
   }
 }
