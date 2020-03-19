@@ -83,12 +83,13 @@
           "target": "~/"
         }
       ],
-      "node03": [{ "file": "*", "target": "/root", "chmod": "+x" }],
-      "node04": [{ "file": "*", "target": "/root", "chmod": "+x" }]
+      "host03": [{ "file": "*", "target": "~/", "chmod": "+x" }],
+      "node04": [{ "file": "*", "target": "~/", "chmod": "+x" }],
+      "node05": [{ "file": "*", "target": "~/", "chmod": "+x" }]
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "terminal-terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
   },
   "backend": {
