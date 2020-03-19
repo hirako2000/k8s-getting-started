@@ -1,0 +1,93 @@
+{
+  "title": "Create a multi nodes Kubernetes cluster",
+  "course_id": "kubernetes-a-to-z",
+  "description": "Steps to create a Kubernetes cluster with multiple nodes and application deployments",
+  "difficulty": "Intermediate",
+  "time": "30 mins",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 Initialise Master",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 5",
+        "text": "step5.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "init.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "dev-1-namespace.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "postgres-conf-volume-deployment-service.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "thingsboard-deployment-service.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-namespace.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-volume.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-service-account.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-role-binding.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-metrics-scraper-deployment.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-metrics-scraper-service.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-deployment.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-service.yaml",
+          "target": "~/"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal-terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster"
+  }
+}
