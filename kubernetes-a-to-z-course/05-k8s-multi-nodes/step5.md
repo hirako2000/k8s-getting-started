@@ -8,8 +8,12 @@ We will now deploy the kubernetes dashboard
 
 Run these commands to create all the dashboard objects
 
+First the namespaces:
+
 `kubectl create -f ./namespaces.yaml`{{execute HOST1}}
-`kubectl create -f ./kubernetes-dashboard-metrics-scraper-all.yaml`{{execute HOST1}}
+
+And the dashboard and metrics scrapper:
+
 `kubectl create -f ./kubernetes-dashboard-all.yaml`{{execute HOST1}}
 
 ### List secrets
