@@ -1,6 +1,6 @@
 The cluster has now been initialised with 2 nodes. The Master node will manage the cluster, while our one worker node will run our container workloads.
 
-## Task
+## Client config
 
 To manage the Kubernetes cluster, the client configuration and certificates are required. This configuration is created when _kubeadm_ initialises the cluster. The command copies the configuration to the users home directory and sets the environment variable for use with the CLI.
 

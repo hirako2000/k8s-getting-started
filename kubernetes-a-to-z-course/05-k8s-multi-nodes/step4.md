@@ -10,4 +10,8 @@ This can be deployed using `kubectl apply`.
 
 Weave will now deploy a few Pods on the cluster. The status of this can be viewed using the command `kubectl get pod -n kube-system`{{execute HOST1}}
 
-When installing Weave on your cluster, visit https://www.weave.works/docs/net/latest/kube-addon/ for details.
+Visit https://www.weave.works/docs/net/latest/kube-addon/ for details on WaveWorks
+
+Now you may see your the cluster is ready:
+
+`kubectl get nodes`{{execute HOST1}}
