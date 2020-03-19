@@ -7,9 +7,3 @@ Once the master node has initialised, additional nodes can join the cluster usin
 One the second node, run the command to join the cluster providing the IP address of the Master node and the token to join:
 
 `kubeadm join --token=102952.1a7dd4cc8d1f4cc6 [[HOST_IP]]:6443`{{execute HOST2}}
-
-## Join a 3nd node
-
-One the third node, run the command to join the cluster, again providing the master node details
-
-`kubeadm join --token=102952.1a7dd4cc8d1f4cc6 [[HOST_IP]]:6443`{{execute HOST3}}
