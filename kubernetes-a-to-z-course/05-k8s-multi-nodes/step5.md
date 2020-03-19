@@ -26,3 +26,7 @@ Run this command to list all secrets for the given namespace:
 
 Now you may see the token for a particular secret, replace -xxxx with the secret id
 `kubectl describe secret kubernetes-dashboard-token-xxxx --namespace kubernetes-dashboard`{{copy}}
+
+### Open the dashboard
+
+https://[[HOST_SUBDOMAIN]]-32000-[[KATACODA_HOST]].environments.katacoda.com/
