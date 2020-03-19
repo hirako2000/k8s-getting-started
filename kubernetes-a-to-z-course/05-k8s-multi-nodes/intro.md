@@ -8,5 +8,5 @@ This scenario takes you through the process of deploying a Kubernetes cluster wi
 
 ## Environment
 
-- Minikube
 - kubeadm
+- kubectl
