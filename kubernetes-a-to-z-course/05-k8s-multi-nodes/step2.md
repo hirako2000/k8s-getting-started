@@ -6,7 +6,7 @@ Once the master node has initialised, additional nodes can join the cluster usin
 
 ssh into the first node
 
-`ssh node01`{{execute HOST1}}
+`ssh node01 -oStrictHostKeyChecking=no`{{execute HOST1}}
 And run this command to join the cluster providing the IP address of the Master node and the token to join:
 
 `kubeadm join --token=102952.1a7dd4cc8d1f4cc6 [[HOST_IP]]:6443 --discovery-token-unsafe-skip-ca-verification`{{execute NODE1}}
@@ -18,7 +18,7 @@ Logout of that node:
 
 ssh into the second node:
 
-`ssh node02`{{execute HOST1}}
+`ssh node02 -oStrictHostKeyChecking=no`{{execute HOST1}}
 
 and run the command to join the cluster:
 
@@ -31,7 +31,7 @@ Logout of that node:
 
 ssh into the third node:
 
-`ssh node03`{{execute HOST1}}
+`ssh node03 -oStrictHostKeyChecking=no`{{execute HOST1}}
 
 and run the command to join the cluster:
 
