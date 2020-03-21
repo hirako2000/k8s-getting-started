@@ -8,4 +8,6 @@ The command below will initialise the cluster with a defined token to simplify t
 
 `kubeadm init --token=102952.1a7dd4cc8d1f4cc6`{{execute HOST1}}
 
-In production, it's recommend to exclude the token causing kubeadm to generate one on your behalf.
+The master node will take a couple of minutes to set up.
+
+Note: In production, it is not recommended to pass a token when initializing the master node, it is considering safer to let kubeadm to generate one on your behalf.
