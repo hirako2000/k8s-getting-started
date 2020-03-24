@@ -29,7 +29,21 @@ Create the metrics scraper service:
 
 `kubectl create -f ./kubernetes-dashboard-metrics-scraper-service.yaml`{{execute}}
 
-### Deploy the dashboard
+### Metrics-server
+
+#### Install Helm repo
+
+Helm is already installed in your environment. Run this command to add the google Charts repo:
+
+`helm repo add stable https://kubernetes-charts.storage.googleapis.com/`{{execute HOST1}}
+
+### Install metrics-server
+
+Now install the metrics-server via the available helm chart from the google repo:
+
+`helm install stable/metrics-server --namespace kube-system --set args[0]="--kubelet-preferred-address-types=InternalIP" --set args[1]="--kubelet-insecure-tls" --generate-name`{{execute HOST1}}
+
+### Deploy the Kubernetes Dashboard
 
 Run this command to deploy the UI Dashboard
 

@@ -18,12 +18,11 @@ Create the dashboard and metrics scrapper:
 
 ### Install metrics-server
 
-### Helm repo
-Helm is already installed in your environment. Run this command to add the google Charts repo:
+Add the helm repo:
 
 `helm repo add stable https://kubernetes-charts.storage.googleapis.com/`{{execute HOST1}}
 
-Now install the metrics-server using the helm chart from the google repo:
+Install the metrics-server
 
 `helm install stable/metrics-server --namespace kube-system --set args[0]="--kubelet-preferred-address-types=InternalIP" --set args[1]="--kubelet-insecure-tls" --generate-name`{{execute HOST1}}
 

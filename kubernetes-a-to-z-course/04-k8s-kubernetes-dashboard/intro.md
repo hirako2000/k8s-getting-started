@@ -5,10 +5,13 @@ This scenario takes you through the process of deploying the Kubernetes (UI) Das
 ## Concepts
 
 - Deploying the Kubernetes Dashboard
+- Metrics Server and Metrics Scraper
 - Concatenating yaml manifests
-- Accessing the Dashbaord for monitoring
+- Secrets and Tokens
+- Accessing the Kubernetes Dashbaord for monitoring
 
 ## Environment
 
 - Minikube
 - kubectl
+- helm
