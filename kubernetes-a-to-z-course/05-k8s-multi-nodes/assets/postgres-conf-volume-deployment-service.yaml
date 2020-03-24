@@ -29,6 +29,14 @@ spec:
     - ReadWriteMany
   hostPath:
     path: '/mnt/data'
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: performance
+          operator: In
+          values:
+          - disk
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

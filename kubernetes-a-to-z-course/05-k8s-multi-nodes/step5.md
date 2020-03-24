@@ -33,8 +33,12 @@ https://[[HOST_SUBDOMAIN]]-32000-[[KATACODA_HOST]].environments.katacoda.com/
 
 ### Helm repo
 
+Helm is already installed in your environment. Run this command to add the google Charts repo:
+
 `helm repo add stable https://kubernetes-charts.storage.googleapis.com/`{{execute HOST1}}
 
 ### Install metrics-server
+
+Now install the metrics-server using the helm chart from the google repo:
 
 `helm install stable/metrics-server --namespace kube-system --set args[0]="--kubelet-preferred-address-types=InternalIP" --set args[1]="--kubelet-insecure-tls" --generate-name`{{execute HOST1}}
