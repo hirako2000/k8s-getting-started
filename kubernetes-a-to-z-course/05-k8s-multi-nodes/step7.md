@@ -1,21 +1,29 @@
-## Node Selector
 
-We will make use of labels and node selectors. Let's assumume that each worker node is provisioned with infrastructure offering different performance, as such:
+### Deploy thingsboard persistent volume
 
-- node01: disk
-- node02: cpu
-- node03: cpu
+Some Node Affinity properties were added to the persistent volume manifest:
 
-We would then preferably have our database application and disk deployed on node01, being disk I/O optinized, and have the Kubernetes and ThingsBoard application on the cpu optimized nodes.
+```yaml
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: performance
+          operator: In
+          values:
+          - disk
+```
 
-### Node Labelling
+This is so that Kubernetes creates the persistent volume on the disk optimized node, as per our defined label.
 
-We apply the performance=disk label to node01:
+`kubectl create -f ./postgres-conf-volume-deployment-service.yaml`{{execute HOST1}}
 
-`kubectl label nodes node01 performance=disk`{{execute}}
+### Deploy thingsboard
 
-And performance=cpu label to node02 and node03
+First, make sure that postgres deployment is READY
 
-`kubectl label nodes node02 performance=cpu`{{execute}}
+`kubectl get deployments --namespace dev-1`{{execute HOST1}}
 
-`kubectl label nodes node03 performance=cpu`{{execute}}
+Now you may deploy the thingsboard application and service
+
+`kubectl apply -f ./thingsboard-deployment-service.yaml`{{execute HOST1}}

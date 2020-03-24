@@ -1,44 +1,25 @@
-The two nodes in the cluster should now be Ready. This means that our deployments can be scheduled and launched.
+## Node Labelling
 
-## Deploy Kubernetes (UI) Dashboard
+We will make use of labels and node selectors. Let's assumume that each worker node is provisioned with infrastructure offering different performance, as such:
 
-We will now deploy the kubernetes dashboard
+- node01: disk
+- node02: cpu
+- node03: cpu
 
-### Deploy
+We would then preferably have our database application and disk deployed on node01, being disk I/O optinized, and have the Kubernetes and ThingsBoard application on the cpu optimized nodes.
 
-Run these commands to create all the dashboard objects
+### Add labels
 
-First the namespaces:
+We apply the performance=disk label to node01:
 
-`kubectl create -f ./namespaces.yaml`{{execute HOST1}}
+`kubectl label nodes node01 performance=disk`{{execute}}
 
-And the dashboard and metrics scrapper:
+And performance=cpu label to node02 and node03
 
-`kubectl create -f ./kubernetes-dashboard-all.yaml`{{execute HOST1}}
+`kubectl label nodes node02 performance=cpu`{{execute}}
 
-### List secrets
+`kubectl label nodes node03 performance=cpu`{{execute}}
 
-Run this command to list all secrets for the given namespace:
+### See the labels
 
-`kubectl get secrets --namespace kubernetes-dashboard`{{execute HOST1}}
-
-### Get the token
-
-Now you may see the token for a particular secret, replace -xxxx with the secret id
-`kubectl describe secret kubernetes-dashboard-token-xxxx --namespace kubernetes-dashboard`{{copy}}
-
-### Open the dashboard
-
-https://[[HOST_SUBDOMAIN]]-32000-[[KATACODA_HOST]].environments.katacoda.com/
-
-### Helm repo
-
-Helm is already installed in your environment. Run this command to add the google Charts repo:
-
-`helm repo add stable https://kubernetes-charts.storage.googleapis.com/`{{execute HOST1}}
-
-### Install metrics-server
-
-Now install the metrics-server using the helm chart from the google repo:
-
-`helm install stable/metrics-server --namespace kube-system --set args[0]="--kubelet-preferred-address-types=InternalIP" --set args[1]="--kubelet-insecure-tls" --generate-name`{{execute HOST1}}
+`kubectl get nodes --show-labels`{{execute}}

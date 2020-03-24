@@ -1,15 +1,43 @@
-### Deploy thingsboard persistent volume
+The 4 nodes in the cluster should now be Ready. This means that our deployments can be scheduled and launched.
 
-`kubectl create -f ./postgres-conf-volume-deployment-service.yaml`{{execute HOST1}}
+## Deploy Kubernetes (UI) Dashboard
 
-Wait for the deployment to be ready.
+We will now deploy the kubernetes dashboard
 
-### Deploy thingsboard
+### Deploy
 
-First, make sure that postgres deployment is READY
+Run these commands to create all the dashboard objects
 
-`kubectl get deployments --namespace dev-1`{{execute HOST1}}
+First the kubernetes-dashboard and dev-1 namespaces:
 
-Now you may deploy the thingsboard application and service
+`kubectl create -f ./namespaces.yaml`{{execute HOST1}}
 
-`kubectl apply -f ./thingsboard-deployment-service.yaml`{{execute HOST1}}
+Create the dashboard and metrics scrapper:
+
+`kubectl create -f ./kubernetes-dashboard-all.yaml`{{execute HOST1}}
+
+### Install metrics-server
+
+### Helm repo
+Helm is already installed in your environment. Run this command to add the google Charts repo:
+
+`helm repo add stable https://kubernetes-charts.storage.googleapis.com/`{{execute HOST1}}
+
+Now install the metrics-server using the helm chart from the google repo:
+
+`helm install stable/metrics-server --namespace kube-system --set args[0]="--kubelet-preferred-address-types=InternalIP" --set args[1]="--kubelet-insecure-tls" --generate-name`{{execute HOST1}}
+
+### List secrets
+
+Run this command to list all secrets for the given namespace:
+
+`kubectl get secrets --namespace kubernetes-dashboard`{{execute HOST1}}
+
+### Get the token
+
+Now you may see the token for a particular secret, replace -xxxx with the secret id
+`kubectl describe secret kubernetes-dashboard-token-xxxx --namespace kubernetes-dashboard`{{copy}}
+
+### Open the dashboard
+
+https://[[HOST_SUBDOMAIN]]-32000-[[KATACODA_HOST]].environments.katacoda.com/
