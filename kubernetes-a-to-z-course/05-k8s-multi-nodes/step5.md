@@ -1,6 +1,6 @@
 ## Node Labelling
 
-We will make use of labels and node selectors. Let's assumume that each worker node is provisioned with infrastructure offering different performance, as such:
+We will make use of labels and node selectors. Let's assume that each worker node is provisioned with infrastructure offering different performance, as such:
 
 - node01: disk
 - node02: cpu

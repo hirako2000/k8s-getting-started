@@ -212,10 +212,6 @@ spec:
           args:
             - --auto-generate-certificates
             - --namespace=kubernetes-dashboard
-            # Uncomment the following line to manually specify Kubernetes API server Host
-            # If not specified, Dashboard will attempt to auto discover the API server and connect
-            # to it. Uncomment only if the default does not work.
-            # - --apiserver-host=http://my-address:port
           volumeMounts:
             - name: kubernetes-dashboard-certs
               mountPath: /certs
@@ -234,6 +230,15 @@ spec:
             readOnlyRootFilesystem: true
             runAsUser: 1001
             runAsGroup: 2001
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: k8s-app
+                operator: In
+                values:
+                - dashboard-metrics-scraper
       volumes:
         - name: kubernetes-dashboard-certs
           secret:

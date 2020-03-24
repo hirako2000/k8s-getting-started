@@ -19,6 +19,17 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-config
+      nodeSelector:
+        performance: cpu
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - thingsboard
 ---
 apiVersion: v1
 kind: Service
