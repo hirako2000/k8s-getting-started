@@ -239,6 +239,7 @@ spec:
                 operator: In
                 values:
                 - dashboard-metrics-scraper
+          topologyKey: "kubernetes.io/hostname"
       volumes:
         - name: kubernetes-dashboard-certs
           secret:
