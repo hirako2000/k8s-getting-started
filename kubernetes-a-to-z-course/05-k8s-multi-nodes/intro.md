@@ -1,6 +1,6 @@
 # Content
 
-This scenario takes you through the process of deploying a Kubernetes cluster with multiple nodes.
+This scenario takes you through the process of deploying a Kubernetes cluster with multiple nodes. Add labels to nodes, also covers the use of nodeAffinity, podAffinity and podAntiAffinity for specific pod deployements onto those nodes.
 
 ## Concepts
 

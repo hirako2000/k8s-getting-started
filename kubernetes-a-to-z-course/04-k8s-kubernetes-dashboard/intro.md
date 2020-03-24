@@ -1,6 +1,6 @@
 # Content
 
-This scenario takes you through the process of deploying the Kubernetes (UI) Dashboard. It also includes steps to deploy a postgres database application with persistent volume, and a web application. The steps make use of yaml files with multiple concatenated manifests
+This scenario takes you through the process of deploying the Kubernetes (UI) Dashboard. It also includes steps to deploy a postgres database application with persistent volume, and a web application. The steps make use of yaml files with multiple concatenated manifests.
 
 ## Concepts
 
@@ -12,6 +12,6 @@ This scenario takes you through the process of deploying the Kubernetes (UI) Das
 
 ## Environment
 
-- Minikube
+- minikube
 - kubectl
 - helm
