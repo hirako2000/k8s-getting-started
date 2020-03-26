@@ -37,6 +37,9 @@ spec:
           operator: In
           values:
           - disk
+  tolerations:
+    - key: node-role.kubernetes.io/disk
+      effect: NoSchedule
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -84,6 +87,9 @@ spec:
         - name: postgredb
           persistentVolumeClaim:
             claimName: postgres-pv-claim
+      tolerations:
+      - key: node-role.kubernetes.io/disk
+        effect: NoSchedule
 ---
 apiVersion: v1
 kind: Service

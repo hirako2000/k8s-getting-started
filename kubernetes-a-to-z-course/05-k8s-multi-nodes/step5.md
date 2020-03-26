@@ -23,3 +23,9 @@ And performance=cpu label to node02 and node03
 ### See the labels
 
 `kubectl get nodes --show-labels`{{execute}}
+
+## Node Taint
+
+Add a NoSchedule taint to node01:
+
+`kubectl taint nodes node01 node-role.kubernetes.io/disk=value:NoSchedule`{{execute}}
