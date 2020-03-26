@@ -37,9 +37,6 @@ spec:
           operator: In
           values:
           - disk
-  tolerations:
-    - key: node-role.kubernetes.io/disk
-      effect: NoSchedule
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
