@@ -24,8 +24,12 @@ And performance=cpu label to node02 and node03
 
 `kubectl get nodes --show-labels`{{execute}}
 
-## Node Taint
+## Node Tainting
 
 Add a NoSchedule taint to node01:
 
 `kubectl taint nodes node01 node-role.kubernetes.io/disk=value:NoSchedule`{{execute}}
+
+### See the taints
+
+`kubectl get nodes -o json | jq '.items[].spec.taints'`{{execute}}
