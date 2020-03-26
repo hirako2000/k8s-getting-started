@@ -1,6 +1,8 @@
 {
+  "pathway_id": "kubernetes-a-to-z",
   "title": "Kubernetes A to Z",
   "description": "A series of scenarios that will teach you how to use Kubernetes",
+  "icon": "fa-kubernetes",
   "courses": [
     {
       "course_id": "01-k8s-getting-started",

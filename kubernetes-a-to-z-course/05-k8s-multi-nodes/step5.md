@@ -28,7 +28,7 @@ And performance=cpu label to node02 and node03
 
 Add a NoSchedule taint to node01:
 
-`kubectl taint nodes node01 node-role.kubernetes.io/disk=value:NoSchedule`{{execute}}
+`kubectl taint nodes node01 node-role.kubernetes.io/disk=reserved:NoSchedule`{{execute}}
 
 ### See the taints
 
