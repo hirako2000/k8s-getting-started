@@ -10,4 +10,4 @@ Let's list the ndoes in the cluster:
 
 `kubectl get nodes`{{execute HOST1}}
 
-At this point, the Nodes may not be ready. This is because the Container Network Interface has not been deployed. This will be fixed within the next step.
+At this point, the mater node shows as NoReady. This is because the Container Network Interface has not been deployed. This will be fixed within the next step.
