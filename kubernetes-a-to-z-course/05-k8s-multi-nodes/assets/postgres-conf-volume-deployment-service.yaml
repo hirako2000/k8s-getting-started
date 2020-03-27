@@ -86,6 +86,8 @@ spec:
             claimName: postgres-pv-claim
       tolerations:
       - key: node-role.kubernetes.io/disk
+        operator: "Equal"
+        value: "reserved"
         effect: NoSchedule
 ---
 apiVersion: v1
