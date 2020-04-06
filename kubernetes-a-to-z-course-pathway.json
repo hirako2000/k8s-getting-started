@@ -28,6 +28,11 @@
       "course_id": "05-k8s-multi-nodes",
       "title": "Deploy a Kubernetes Cluster with 4 nodes ",
       "description": "Steps to create a Kubernetes cluster with an extra 3 nodes, "
+    },
+    {
+      "course_id": "06-k8s-probes",
+      "title": "Deploy a Kubernetes Cluster with 4 nodes ",
+      "description": "Steps to create a Kubernetes cluster with an extra 3 nodes, "
     }
   ]
 }
