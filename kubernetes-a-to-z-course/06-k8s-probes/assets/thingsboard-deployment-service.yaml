@@ -21,9 +21,9 @@ spec:
                 name: postgres-config
           livenessProbe:
             httpGet:
-              scheme: HTTPS
+              scheme: HTTP
               path: /
-              port: 8443
+              port: 9090
             initialDelaySeconds: 60
             timeoutSeconds: 10
       nodeSelector:
