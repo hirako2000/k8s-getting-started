@@ -3,7 +3,7 @@
   "course_id": "kubernetes-a-to-z",
   "description": "Steps to create a Kubernetes cluster with multiple nodes and application deployments",
   "difficulty": "Intermediate",
-  "time": "30 mins",
+  "time": "40 mins",
   "details": {
     "steps": [
       {

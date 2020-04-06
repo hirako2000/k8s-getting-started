@@ -3,7 +3,7 @@
   "course_id": "kubernetes-a-to-z",
   "description": "Steps to create a Kubernetes cluster with Dashboard and application deployments, using YAML specification files",
   "difficulty": "Intermediate",
-  "time": "30 mins",
+  "time": "45 mins",
   "details": {
     "steps": [
       {
