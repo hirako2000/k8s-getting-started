@@ -24,9 +24,10 @@ spec:
               scheme: HTTP
               path: /
               port: 9090
-            initialDelaySeconds: 60
-            timeoutSeconds: 10
+            initialDelaySeconds: 120
             periodSeconds: 3
+            timeoutSeconds: 10
+            failureThreshold: 2
       nodeSelector:
         performance: cpu
       affinity:
