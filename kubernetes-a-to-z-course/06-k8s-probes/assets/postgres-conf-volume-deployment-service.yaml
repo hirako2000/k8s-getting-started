@@ -80,11 +80,11 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb
-        readinessProbe:
-          exec:
-            command: ["psql", "-w", "-U", "thingsboard", "-d", "thingsboarddb", "-c", "SELECT 1"]
-          initialDelaySeconds: 60
-        timeoutSeconds: 1
+          readinessProbe:
+            exec:
+              command: ["psql", "-w", "-U", "thingsboard", "-d", "thingsboarddb", "-c", "SELECT 1"]
+            initialDelaySeconds: 60
+            timeoutSeconds: 1
       volumes:
         - name: postgredb
           persistentVolumeClaim:

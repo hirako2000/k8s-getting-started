@@ -19,6 +19,13 @@ spec:
           envFrom:
             - configMapRef:
                 name: postgres-config
+          livenessProbe:
+            httpGet:
+              scheme: HTTPS
+              path: /
+              port: 8443
+            initialDelaySeconds: 60
+            timeoutSeconds: 10
       nodeSelector:
         performance: cpu
       affinity:
