@@ -23,6 +23,11 @@
       "course_id": "04-k8s-kubernetes-dashboard",
       "title": "Deploy the Kubernetes (UI) Dashboard and monitor resources",
       "description": "Steps to create a Kubernetes cluster with Dashboard and application deployments, using YAML specification files"
+    },
+    {
+      "course_id": "05-k8s-multi-nodes",
+      "title": "Deploy a Kubernetes Cluster with 4 nodes ",
+      "description": "Steps to create a Kubernetes cluster with an extra 3 nodes, "
     }
   ]
 }

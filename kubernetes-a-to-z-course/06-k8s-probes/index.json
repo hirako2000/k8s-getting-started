@@ -1,0 +1,91 @@
+{
+  "title": "Create a multi nodes Kubernetes cluster",
+  "course_id": "kubernetes-a-to-z",
+  "description": "Steps to create a Kubernetes cluster with multiple nodes and application deployments",
+  "difficulty": "Intermediate",
+  "time": "30 mins",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1 Initialise Master",
+        "text": "step1.md"
+      },
+      {
+        "title": "Step 2",
+        "text": "step2.md"
+      },
+      {
+        "title": "Step 3",
+        "text": "step3.md"
+      },
+      {
+        "title": "Step 4",
+        "text": "step4.md"
+      },
+      {
+        "title": "Step 5",
+        "text": "step5.md"
+      },
+      {
+        "title": "Step 6",
+        "text": "step6.md"
+      },
+      {
+        "title": "Step 7",
+        "text": "step7.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "init.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "namespaces.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "postgres-conf-volume-deployment-service.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "thingsboard-deployment-service.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-all.yaml",
+          "target": "~/"
+        },
+        {
+          "file": "kubernetes-dashboard-volume.yaml",
+          "target": "~/"
+        }
+      ],
+      "node01": [{ "file": "*", "target": "~/", "chmod": "+x" }],
+      "node02": [{ "file": "*", "target": "~/", "chmod": "+x" }],
+      "node03": [{ "file": "*", "target": "~/", "chmod": "+x" }]
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "uilayout": "terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal. A safe place to learn and execute commands.\u001b[m\r\n",
+    "dashboards": [
+      {
+        "name": "Kubernetes Dashboard",
+        "href": "https://[[HOST1_SUBDOMAIN]]-32000-[[KATACODA_HOST]].environments.katacoda.com"
+      },
+      {
+        "name": "Thingsboard",
+        "href": "https://[[HOST1_SUBDOMAIN]]-32001-[[KATACODA_HOST]].environments.katacoda.com"
+      }
+    ]
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-4node"
+  }
+}

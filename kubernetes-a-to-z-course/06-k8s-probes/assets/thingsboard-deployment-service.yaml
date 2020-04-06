@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thingsboard-deployment
+  namespace: dev-1
+spec:
+  selector:
+    matchLabels:
+      app: thingsboard
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: thingsboard
+    spec:
+      containers:
+        - name: thingsboard-postgres
+          image: thingsboard/tb-postgres
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+      nodeSelector:
+        performance: cpu
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - thingsboard
+            topologyKey: "kubernetes.io/hostname"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: thingsboard-service
+  namespace: dev-1
+spec:
+  selector:
+    app: thingsboard
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9090
+      nodePort: 32001
+  type: NodePort
