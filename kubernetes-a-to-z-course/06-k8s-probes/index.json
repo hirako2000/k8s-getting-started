@@ -1,7 +1,7 @@
 {
-  "title": "Create a multi nodes Kubernetes cluster",
+  "title": "Create a Kubernetes with probes ",
   "course_id": "kubernetes-a-to-z",
-  "description": "Steps to create a Kubernetes cluster with multiple nodes and application deployments",
+  "description": "Steps to create a Kubernetes cluster with readiness and liveness probes",
   "difficulty": "Intermediate",
   "time": "30 mins",
   "details": {
