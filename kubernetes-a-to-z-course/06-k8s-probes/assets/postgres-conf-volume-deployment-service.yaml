@@ -9,7 +9,7 @@ data:
   POSTGRES_DB: thingsboarddb
   POSTGRES_USER: thingsboard
   POSTGRES_PASSWORD: thingsboard
-  SPRING_DATASOURCE_URL: jdbc:postgresql://tb-database:5432/thingsboarddb
+  SPRING_DATASOURCE_URL: jdbc:postgresql://${TB_DATABASE_SERVICE_HOST}:${TB_DATABASE_SERVICE_PORT}/thingsboarddb
   SPRING_DATASOURCE_USERNAME: thingsboard
   SPRING_DATASOURCE_PASSWORD: thingsboard
 ---
