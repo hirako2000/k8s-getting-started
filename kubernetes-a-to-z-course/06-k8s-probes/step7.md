@@ -12,3 +12,7 @@ First, make sure that postgres deployment is READY
 Now you may deploy the thingsboard application and service
 
 `kubectl create -f ./thingsboard-deployment-service.yaml`{{execute HOST1}}
+
+### Open ThingsBoard app
+
+https://[[HOST_SUBDOMAIN]]-32001-[[KATACODA_HOST]].environments.katacoda.com/
